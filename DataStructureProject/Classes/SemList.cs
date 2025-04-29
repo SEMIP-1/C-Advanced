@@ -1,10 +1,12 @@
+using System.Runtime.CompilerServices;
+
 namespace DataStructuresCollections
 {
-    public class SemList<T>
+    public class SemList<T> where T : class
     {
         #region Propertits
         T[] Items;
-        public int Count {get;set;}
+        public int Count;
         int CurrentIndex;
         public int Capacity =4;
         #endregion
@@ -30,7 +32,7 @@ namespace DataStructuresCollections
         {
             get
             {
-                if(index<0 || index> Items.Length)
+                if(index<0 || index> CurrentIndex)
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -38,7 +40,7 @@ namespace DataStructuresCollections
             }
             set
             {
-                if(index<0 || index> Items.Length)
+                if(index<0 || index> CurrentIndex)
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -57,7 +59,7 @@ namespace DataStructuresCollections
                 List<T> result = new List<T>();
                 foreach (var index in indexersArray)
                 {
-                    if(Convert.ToInt32(index) < 0 || Convert.ToInt32(index) > Items.Length)
+                    if(Convert.ToInt32(index) < 0 || Convert.ToInt32(index) > CurrentIndex)
                         continue;
                     
                     result.Add(Items[Convert.ToInt32(index)]);
@@ -67,6 +69,53 @@ namespace DataStructuresCollections
             }
         }
         #endregion
+
+        #region Methods
+        void CopyArray(T[] nArrayOld,T[] nArrayNew,int Size)
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                nArrayNew[i] = nArrayOld[i];
+            }
+        }        
+        void Resize(int nSize)
+        {
+            T[] newItems = new T[nSize];
+            CopyArray(this.Items, newItems,this.Items.Length);
+            this.Items= newItems;
+        }
+        public void Add(T item)
+        {
+            if(CurrentIndex >= this.Capacity)
+            {
+                Capacity=Capacity*2;
+                Resize(Capacity);
+            }
+            Items[CurrentIndex] = item;
+            CurrentIndex++;
+            Count++;
+        }
+        void Shiftleft(int index)
+        {
+            for(int i=index;i<CurrentIndex;i++)
+           {
+                if(this.Items[i]==null)
+                    break;
+                this.Items[index]=this.Items[index+1];
+           }
+        }
+        public void RemoveAT(int index)
+        {
+            if(index<0 || index> CurrentIndex)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            Shiftleft(index);
+           CurrentIndex--;
+           Count--;
+        }
+        #endregion
+    
     }
 }
 
