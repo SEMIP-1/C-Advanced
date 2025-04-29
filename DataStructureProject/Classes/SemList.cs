@@ -1,25 +1,25 @@
 namespace DataStructuresCollections
 {
-    public class SemList
+    public class SemList<T>
     {
         #region Propertits
-        T[] Item;
-        public int Count {get;set:}
+        T[] Items;
+        public int Count {get;set;}
         int CurrentIndex;
-        const int Capacity =4
+        public int Capacity =4;
         #endregion
 
         #region Constructors
-        public semlist()
+        public SemList()
         {
-            Item= new T[Capacity];
+            Items= new T[Capacity];
             Count = 0;
             CurrentIndex=0;
         }
-        public semlist(int Capacity)
+        public SemList(int Capacity)
         {
             this.Capacity=Capacity;
-            this.Item= new T[Capacity];
+            this.Items= new T[Capacity];
             Count = 0;
             CurrentIndex=0;
         }
@@ -28,20 +28,44 @@ namespace DataStructuresCollections
         #region Indexers
         public T this[int index]
         {
-            set
-            {
-                Item[index]=value
-            }
             get
             {
-                if(index>0 || index>Items.Length)
+                if(index<0 || index> Items.Length)
                 {
-                    throw new IndexOutOfRangeexception();
+                    throw new IndexOutOfRangeException();
                 }
-                return Items[index]
+                return Items[index];
+            }
+            set
+            {
+                if(index<0 || index> Items.Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                Items[index]=value;
+            }
+            
+        }
+        public List<T> this[string indexers]
+        {
+            get
+            {
+                if(string.IsNullOrEmpty(indexers))
+                    throw new ArgumentNullException();
+                
+                string[] indexersArray = indexers.Split(',');
+                List<T> result = new List<T>();
+                foreach (var index in indexersArray)
+                {
+                    if(Convert.ToInt32(index) < 0 || Convert.ToInt32(index) > Items.Length)
+                        continue;
+                    
+                    result.Add(Items[Convert.ToInt32(index)]);
+                }
+                return result;
+                
             }
         }
-        public string this[string ListName]{}
         #endregion
     }
 }
