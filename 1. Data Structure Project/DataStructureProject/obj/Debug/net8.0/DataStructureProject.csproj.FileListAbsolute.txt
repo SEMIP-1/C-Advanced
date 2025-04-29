@@ -1,5 +1,0 @@
-/workspaces/C-Advanced/1. Data Structure Project/DataStructureProject/obj/Debug/net8.0/DataStructureProject.GeneratedMSBuildEditorConfig.editorconfig
-/workspaces/C-Advanced/1. Data Structure Project/DataStructureProject/obj/Debug/net8.0/DataStructureProject.AssemblyInfoInputs.cache
-/workspaces/C-Advanced/1. Data Structure Project/DataStructureProject/obj/Debug/net8.0/DataStructureProject.AssemblyInfo.cs
-/workspaces/C-Advanced/1. Data Structure Project/DataStructureProject/obj/Debug/net8.0/DataStructureProject.csproj.CoreCompileInputs.cache
-/workspaces/C-Advanced/1. Data Structure Project/DataStructureProject/obj/Debug/net8.0/DataStructureProject.sourcelink.json
