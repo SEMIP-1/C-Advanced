@@ -114,6 +114,10 @@ namespace DataStructuresCollections
            CurrentIndex--;
            Count--;
         }
+        public void IndexOf(T item)
+        {
+            for(int i =0; i<=CurrentIndex;i++){}
+        }
         #endregion
     
     }
