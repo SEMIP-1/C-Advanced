@@ -1,0 +1,15 @@
+/workspaces/C-Advanced/DataStructureProject/bin/Debug/net8.0/DataStructureProject
+/workspaces/C-Advanced/DataStructureProject/bin/Debug/net8.0/DataStructureProject.deps.json
+/workspaces/C-Advanced/DataStructureProject/bin/Debug/net8.0/DataStructureProject.runtimeconfig.json
+/workspaces/C-Advanced/DataStructureProject/bin/Debug/net8.0/DataStructureProject.dll
+/workspaces/C-Advanced/DataStructureProject/bin/Debug/net8.0/DataStructureProject.pdb
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.AssemblyInfoInputs.cache
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.AssemblyInfo.cs
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.csproj.CoreCompileInputs.cache
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.sourcelink.json
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.dll
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/refint/DataStructureProject.dll
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.pdb
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/DataStructureProject.genruntimeconfig.cache
+/workspaces/C-Advanced/DataStructureProject/obj/Debug/net8.0/ref/DataStructureProject.dll

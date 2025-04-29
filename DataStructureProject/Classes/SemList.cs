@@ -1,12 +1,12 @@
-namespace DataStructureProject
+namespace DataStructuresCollections
 {
-    public class semlist<T>
+    public class SemList
     {
         #region Propertits
         T[] Item;
         public int Count {get;set:}
         int CurrentIndex;
-        const int Capacity =4;
+        const int Capacity =4
         #endregion
 
         #region Constructors
@@ -45,3 +45,4 @@ namespace DataStructureProject
         #endregion
     }
 }
+
