@@ -114,9 +114,26 @@ namespace DataStructuresCollections
            CurrentIndex--;
            Count--;
         }
-        public void IndexOf(T item)
+        public int IndexOf(T item)
         {
-            for(int i =0; i<=CurrentIndex;i++){}
+            for(int i =0; i<=CurrentIndex;i++)
+            {
+                if(EqualityComparer<T>.Default.Equals(this.Items[i],item))
+                    return i;
+            } 
+            return -1;
+        }
+        public void Remove(T item)
+        {
+            //RemoveAT(IndexOf(item));
+            int removedindex =IndexOf(item);
+            if(removedindex<0 || removedindex> CurrentIndex)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            Shiftleft(removedindex);
+            CurrentIndex--;
+            Count--;
         }
         #endregion
     
