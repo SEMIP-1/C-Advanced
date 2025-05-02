@@ -13,12 +13,16 @@ namespace DataStructuresCollections
             list.Add("Hussein");
             list.Add("Ahmed");
             list.Add("Mohamed");
-            Console.WriteLine(list.Count);
-            Console.WriteLine(list[2]);
-            list.RemoveAT(2);
-            Console.WriteLine(list.Count);
-            Console.WriteLine(list[2]);
+            
+            SemList<string> list1 = new SemList<string>();
+            list1.Add("Salah1");
+            list1.Add("Eldin1");
+            list1.Add("Mohamed1");
+            list1.Add("Hussein1");
+            list1.Add("Ahmed1");
+            list1.Add("Mohamed1");
 
+           list.AddRange(new string[]{"a1","a2","a3","a4","a5","a6"});
         }
     }
 }

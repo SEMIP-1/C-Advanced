@@ -88,12 +88,27 @@ namespace DataStructuresCollections
         {
             if(CurrentIndex >= this.Capacity)
             {
-                Capacity=Capacity*2;
+                Capacity=Capacity+4;
                 Resize(Capacity);
             }
             Items[CurrentIndex] = item;
             CurrentIndex++;
             Count++;
+        }
+        public void AddRange(T[] UserItem)
+        {
+            if((UserItem.Length+CurrentIndex)>this.Capacity)
+            {
+                while(this.Capacity<(UserItem.Length+CurrentIndex))
+                {
+                    this.Capacity +=4;
+                }
+                Resize(this.Capacity);
+            }
+            for(int i=0;i<(UserItem.Length);i++)
+            {
+                Add(UserItem[i]);
+            }
         }
         void Shiftleft(int index)
         {
@@ -102,6 +117,11 @@ namespace DataStructuresCollections
                 if(this.Items[i]==null)
                     break;
                 this.Items[index]=this.Items[index+1];
+           }
+           //7-Remove More Details
+           if(this.Items[this.Items.Length-1]!=null)
+           {
+                this.Items[this.Items.Length-1]=default(T);
            }
         }
         public void RemoveAT(int index)
@@ -135,6 +155,19 @@ namespace DataStructuresCollections
             CurrentIndex--;
             Count--;
         }
+        public void RemoveRange(int UserIndex,int UserCount)
+        {
+            if(UserIndex>this.CurrentIndex || UserIndex==0 || UserCount==0 ||UserIndex+UserCount>this.Items.Length)
+                throw new IndexOutOfRangeException();
+            
+            for(int i = UserIndex;i<UserIndex+UserCount;i++)
+            {
+                
+            }
+            
+        }
+       
+       
         #endregion
     
     }
