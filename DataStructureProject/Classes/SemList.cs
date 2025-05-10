@@ -23,9 +23,9 @@ namespace DataStructuresCollections
         public int Count;
         int CurrentIndex;
         public int Capacity = 4;
-
+        Stack<T> stack;
+        EqualityComparer<T> comparer;
         int ICollection<T>.Count => throw new NotImplementedException();
-
         public bool IsReadOnly => throw new NotImplementedException();
         #endregion
 
@@ -35,6 +35,8 @@ namespace DataStructuresCollections
             Items = new T[Capacity];
             Count = 0;
             CurrentIndex = 0;
+            Stack<T> stack = new Stack<T>();
+            comparer = EqualityComparer<T>.Default;
         }
         public SemList(int Capacity)
         {
@@ -42,6 +44,17 @@ namespace DataStructuresCollections
             this.Items = new T[Capacity];
             Count = 0;
             CurrentIndex = 0;
+            Stack<T> stack = new Stack<T>();
+            comparer = EqualityComparer<T>.Default;
+        }
+        public SemList(IEnumerable<T> collection)
+        {
+            int nCount = GetIEnumerableCount(collection);
+            this.Items = new T[nCount];
+            foreach (T item in collection)
+                Add(item);
+            comparer = EqualityComparer<T>.Default;
+            Stack<T> stack = new Stack<T>();
         }
         #endregion
 
@@ -125,6 +138,7 @@ namespace DataStructuresCollections
         }
         void Shiftleft(int UserIndex, int UserCount)
         {
+            stack.Push(this.Items[UserIndex]);
             for (int i = UserIndex + UserCount; i < Items.Length; i++)
             {
                 this.Items[UserIndex] = this.Items[i];
@@ -166,6 +180,19 @@ namespace DataStructuresCollections
                 Console.WriteLine(this.Items[i]);
             }
         }
+        public void Undo()
+        {
+            T Item = stack.Pop();
+            Add(Item);
+        }
+        public void UndoAll()
+        {
+            foreach (T item in stack)
+            {
+                stack.Pop();
+                Add(item);
+            }
+        }
         #endregion
         #region Adding Items
         public void Add(T item)
@@ -179,20 +206,24 @@ namespace DataStructuresCollections
             CurrentIndex++;
             Count++;
         }
-        public void AddRange(T[] UserItem)
+        public void AddRange(IEnumerable<T> UserItem)
         {
-            if ((UserItem.Length + CurrentIndex) > this.Capacity)
+            int nCount = GetIEnumerableCount(UserItem);
+            if ((nCount + CurrentIndex) > this.Capacity)
             {
-                while (this.Capacity < (UserItem.Length + CurrentIndex))
+                while (this.Capacity < (nCount + CurrentIndex))
                 {
                     this.Capacity += 4;
                 }
                 Resize(this.Capacity);
             }
-            for (int i = 0; i < (UserItem.Length); i++)
+            foreach (T item in UserItem)
             {
-                Add(UserItem[i]);
+                this.Items[CurrentIndex] = item;
+                CurrentIndex++;
+                Count++;
             }
+
         }
         public void Insert(int UserIndex, T item)
         {
@@ -206,20 +237,24 @@ namespace DataStructuresCollections
             ShiftRight(UserIndex, 1);
             this.Items[UserIndex] = item;
         }
-        public void InsertRange(int UserIndex, T[] item)
+        public void InsertRange(int UserIndex, IEnumerable<T> items)
         {
+            int nCount = GetIEnumerableCount(items);
             if (UserIndex > this.CurrentIndex || UserIndex < 0)
                 throw new IndexOutOfRangeException();
-            if (CurrentIndex + item.Length >= this.Capacity)
+            if (CurrentIndex + nCount >= this.Capacity)
             {
-                Capacity = CurrentIndex + item.Length;
+                Capacity = CurrentIndex + nCount;
                 Resize(Capacity);
             }
-            ShiftRight(UserIndex, item.Length);
-            for (int i = 0; i < item.Length; i++)
+            ShiftRight(UserIndex, nCount);
+            foreach (T item in items)
             {
-                this.Items[UserIndex + i] = item[i];
+                this.Items[UserIndex] = item;
+                UserIndex++;
+                Count++;
             }
+
         }
         #endregion
         #region Removeing Items
@@ -280,6 +315,16 @@ namespace DataStructuresCollections
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+        int GetIEnumerableCount(IEnumerable<T> collection)
+        {
+            int count = 0;
+            foreach (T item in Items)
+            {
+                count++;
+            }
+            return count;
+
         }
         #endregion
         #region ICollection Ineterface
