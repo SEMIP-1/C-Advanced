@@ -1,0 +1,15 @@
+/workspaces/C-Advanced/GameProject/bin/Debug/net8.0/GameProject
+/workspaces/C-Advanced/GameProject/bin/Debug/net8.0/GameProject.deps.json
+/workspaces/C-Advanced/GameProject/bin/Debug/net8.0/GameProject.runtimeconfig.json
+/workspaces/C-Advanced/GameProject/bin/Debug/net8.0/GameProject.dll
+/workspaces/C-Advanced/GameProject/bin/Debug/net8.0/GameProject.pdb
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.AssemblyInfoInputs.cache
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.AssemblyInfo.cs
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.csproj.CoreCompileInputs.cache
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.sourcelink.json
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.dll
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/refint/GameProject.dll
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.pdb
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.genruntimeconfig.cache
+/workspaces/C-Advanced/GameProject/obj/Debug/net8.0/ref/GameProject.dll
