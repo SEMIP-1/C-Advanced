@@ -13,3 +13,18 @@
 /workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.pdb
 /workspaces/C-Advanced/GameProject/obj/Debug/net8.0/GameProject.genruntimeconfig.cache
 /workspaces/C-Advanced/GameProject/obj/Debug/net8.0/ref/GameProject.dll
+E:\2. IT Legend\C-Advanced\GameProject\bin\Debug\net8.0\GameProject.exe
+E:\2. IT Legend\C-Advanced\GameProject\bin\Debug\net8.0\GameProject.deps.json
+E:\2. IT Legend\C-Advanced\GameProject\bin\Debug\net8.0\GameProject.runtimeconfig.json
+E:\2. IT Legend\C-Advanced\GameProject\bin\Debug\net8.0\GameProject.dll
+E:\2. IT Legend\C-Advanced\GameProject\bin\Debug\net8.0\GameProject.pdb
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.GeneratedMSBuildEditorConfig.editorconfig
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.AssemblyInfoInputs.cache
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.AssemblyInfo.cs
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.csproj.CoreCompileInputs.cache
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.sourcelink.json
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.dll
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\refint\GameProject.dll
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.pdb
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\GameProject.genruntimeconfig.cache
+E:\2. IT Legend\C-Advanced\GameProject\obj\Debug\net8.0\ref\GameProject.dll

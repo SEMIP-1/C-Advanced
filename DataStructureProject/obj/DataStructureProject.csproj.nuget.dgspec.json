@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/C-Advanced/DataStructureProject/DataStructureProject.csproj": {}
+    "E:\\2. IT Legend\\C-Advanced\\DataStructureProject\\DataStructureProject.csproj": {}
   },
   "projects": {
-    "/workspaces/C-Advanced/DataStructureProject/DataStructureProject.csproj": {
+    "E:\\2. IT Legend\\C-Advanced\\DataStructureProject\\DataStructureProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/C-Advanced/DataStructureProject/DataStructureProject.csproj",
+        "projectUniqueName": "E:\\2. IT Legend\\C-Advanced\\DataStructureProject\\DataStructureProject.csproj",
         "projectName": "DataStructureProject",
-        "projectPath": "/workspaces/C-Advanced/DataStructureProject/DataStructureProject.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/C-Advanced/DataStructureProject/obj/",
+        "projectPath": "E:\\2. IT Legend\\C-Advanced\\DataStructureProject\\DataStructureProject.csproj",
+        "packagesPath": "C:\\Users\\PUZZLE\\.nuget\\packages\\",
+        "outputPath": "E:\\2. IT Legend\\C-Advanced\\DataStructureProject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\PUZZLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
