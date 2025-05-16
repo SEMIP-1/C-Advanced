@@ -1,69 +1,113 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welcome to Math Operations Game MOG");
-char exit = 'a';
-Random myRandom = new Random();
-int nRightAnswerCount=0;
-int nWrongAnswerCount=0;
-int nFirstNumber= 0;
-int nSecondNumber= 0;
-int nOperator= 0;
-while (exit!='e')
-{
-    //Random Number Initiation 
-    bool isRightAnwer = false;
-    nFirstNumber= myRandom.Next(0,10);
-    nSecondNumber= myRandom.Next(0,10);
-    nOperator= myRandom.Next(1,3);
-    //Showing First and Second Number 
-    Console.WriteLine($"First Number {nFirstNumber}  Second Number {nSecondNumber}");
-    switch(nOperator)
+namespace MathOperationGame
+{ 
+    public struct MathOperator
     {
-        case 1:
-            Console.WriteLine("Operation is Sumation");
-            break;
-        case 2:
-            Console.WriteLine("Operation is Subtraction");
-            break;
-        case 3:
-            Console.WriteLine("Operation is Multiplication");
-            break;
+        public int nFirstNumber;
+        public int nSecondNumber;
+        public int nOperator;
     }
-    Console.WriteLine("************************************************************");
-    //Result Number Read from User 
-    int nResult = Convert.ToInt32(Console.ReadLine());
-    switch(nOperator)
+    class Program
     {
-        case 1:
-            isRightAnwer =(nResult==nFirstNumber+nSecondNumber);
-            break;
-        case 2:
-            isRightAnwer =(nResult==nFirstNumber-nSecondNumber);
-            break;
-        case 3:
-            isRightAnwer =(nResult==nFirstNumber*nSecondNumber);
-            break;
-    }    
-    //Result verifcation Process
-    if (isRightAnwer)
-    {    
-        Console.WriteLine("The answer is Correct");
-        nRightAnswerCount++;
+        public static MathOperator GetNextNumber()
+        {
+            MathOperator CurrentNumbers;
+            Random myRandom = new Random();
+            CurrentNumbers.nFirstNumber= myRandom.Next(0,10);
+            CurrentNumbers.nSecondNumber= myRandom.Next(0,10);
+            CurrentNumbers.nOperator= myRandom.Next(1,3);
+            return CurrentNumbers;
+        }
+        public static void PrintOperation(MathOperator CurrentNumbers)
+        {
+            switch(CurrentNumbers.nOperator)
+                {
+                    case 1:
+                        Console.WriteLine("Operation is Sumation");
+                        break;
+                    case 2:
+                        Console.WriteLine("Operation is Subtraction");
+                        break;
+                    case 3:
+                        Console.WriteLine("Operation is Multiplication");
+                        break;
+                }
+            Console.WriteLine("************************************************************");
+        }
+        public static bool CheckResult(MathOperator CurrentNumbers,int nResult)
+        {
+            bool isRightAnwer=false;
+            switch(CurrentNumbers.nOperator)
+                {
+                    case 1:
+                        isRightAnwer =(nResult==CurrentNumbers.nFirstNumber+CurrentNumbers.nSecondNumber);
+                        break;
+                    case 2:
+                        isRightAnwer =(nResult==CurrentNumbers.nFirstNumber-CurrentNumbers.nSecondNumber);
+                        break;
+                    case 3:
+                        isRightAnwer =(nResult==CurrentNumbers.nFirstNumber*CurrentNumbers.nSecondNumber);
+                        break;
+                }
+            return isRightAnwer;    
+        }
+        public static void PrintResult(bool isRightAnwer,int nRightAnswerCount,int nWrongAnswerCount)
+        {
+            if (isRightAnwer)
+                {    
+                    Console.WriteLine("The answer is Correct");
+                    nRightAnswerCount++;
+                }
+                else 
+                {    
+                    Console.WriteLine("The answer is Wrong");
+                    nWrongAnswerCount++;
+                }
+        }
+        public static void CheckAnswerCount(int nRightAnswerCount,int nWrongAnswerCount,out bool isBreak)
+        {
+            isBreak=false;
+            if (nRightAnswerCount==5)
+            {    
+                Console.WriteLine("Level Promoted");
+                isBreak=false;
+            }
+            else if(nWrongAnswerCount==3) 
+            {    
+                Console.WriteLine("Game Over");
+                isBreak=true;
+                //break ===> exit from loop / return ===> exit from function / contenue ===> exit from current ertation and move to next one 
+            }
+            Console.WriteLine("************************************************************");
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Math Operations Game MOG");
+            char exit = 'a';
+            MathOperator CurrentNumbers=GetNextNumber();
+            int nRightAnswerCount=0;
+            int nWrongAnswerCount=0;
+            while (exit!='e')
+            {
+                //Showing First and Second Number 
+                Console.WriteLine($"First Number {CurrentNumbers.nFirstNumber}  Second Number {CurrentNumbers.nSecondNumber}");
+                PrintOperation(CurrentNumbers);
+                //***********************************************************   
+                //Result Number Read from User 
+                int nResult = Convert.ToInt32(Console.ReadLine());
+                bool isRightAnwer=CheckResult(CurrentNumbers,nResult);
+                //***********************************************************   
+                //Result verifcation Process
+                PrintResult( isRightAnwer, nRightAnswerCount, nWrongAnswerCount);
+                //***********************************************************   
+                bool isBreak=false;
+                CheckAnswerCount(nRightAnswerCount, nWrongAnswerCount,out isBreak);
+                if(isBreak)
+                    break;
+                //***********************************************************   
+                Console.WriteLine("If You Want to Exit Press e");
+                exit = Convert.ToChar(Console.ReadLine());
+            }
+        }
     }
-    else 
-    {    
-        Console.WriteLine("The answer is Wrong");
-        nWrongAnswerCount++;
-    }
-    if (nRightAnswerCount==5)
-    {    
-        Console.WriteLine("Level Promoted");
-    }
-    else if(nWrongAnswerCount==3) 
-    {    
-        Console.WriteLine("Game Over");
-        break;//break ===> exit from loop / return ===> exit from function / contenue ===> exit from current ertation and move to next one 
-    }
-    Console.WriteLine("************************************************************");
-    Console.WriteLine("If You Want to Exit Press e");
-    exit = Convert.ToChar(Console.ReadLine());
 }
