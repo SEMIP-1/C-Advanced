@@ -15,7 +15,7 @@ namespace MathOperationGame
             Random myRandom = new Random();
             CurrentNumbers.nFirstNumber= myRandom.Next(0,10);
             CurrentNumbers.nSecondNumber= myRandom.Next(0,10);
-            CurrentNumbers.nOperator= myRandom.Next(1,3);
+            CurrentNumbers.nOperator= myRandom.Next(1,47);
             return CurrentNumbers;
         }
         public static void PrintOperation(MathOperator CurrentNumbers)
