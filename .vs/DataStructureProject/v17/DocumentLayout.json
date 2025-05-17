@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\2. IT Legend\\C-Advanced\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D26F80FF-04E0-4F4F-90F9-ECCFD918798D}|GameProject\\GameProject.csproj|e:\\2. it legend\\c-advanced\\gameproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D26F80FF-04E0-4F4F-90F9-ECCFD918798D}|GameProject\\GameProject.csproj|solutionrelative:gameproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\2. IT Legend\\C-Advanced\\GameProject\\Program.cs",
+              "RelativeDocumentMoniker": "GameProject\\Program.cs",
+              "ToolTip": "E:\\2. IT Legend\\C-Advanced\\GameProject\\Program.cs",
+              "RelativeToolTip": "GameProject\\Program.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwBEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:44:03.484Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
